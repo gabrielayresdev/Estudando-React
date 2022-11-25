@@ -23,6 +23,7 @@ const Produtos = () => {
           ? produtos.map((produto) => (
               <div>
                 <img src={produto.fotos[0].src} className={styles.fotoDeCapa} />
+                <h1>{produto.nome}</h1>
               </div>
             ))
           : null}
