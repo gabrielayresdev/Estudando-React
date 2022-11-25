@@ -1,0 +1,39 @@
+.body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 50%;
+    margin-top: 3rem;
+}
+
+.button {
+    color: #000;
+    font-size: 1.2rem;
+    
+    background-color: #ddd;
+    border: none;
+
+    padding: 10px;
+    margin-right: 1rem;
+
+    min-width: 100px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    gap: 1rem;
+
+    margin-top: 3rem;
+}
+
+.fotoDeCapa {
+    width: 100%;
+    border-radius: 30px;
+}
