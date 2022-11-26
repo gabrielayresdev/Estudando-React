@@ -1,9 +1,10 @@
 import React from 'react';
-import Head from './Head';
-import styles from './App.module.css';
+import './styles.css';
+import { Link } from 'react-router-dom';
 
 const Produtos = () => {
   const [produtos, setProdutos] = React.useState(null);
+
   async function buscaProdutos() {
     const resposta = await fetch(
       'https://ranekapi.origamid.dev/json/api/produto',
@@ -13,22 +14,23 @@ const Produtos = () => {
     console.log(json);
     setProdutos(json);
   }
-  buscaProdutos();
-  return (
-    <>
-      <Head title={'Home'} />
+  React.useEffect(() => {
+    buscaProdutos();
+  }, []);
 
-      <div className={styles.produtos}>
-        {produtos
-          ? produtos.map((produto) => (
-              <div>
-                <img src={produto.fotos[0].src} className={styles.fotoDeCapa} />
-                <h1>{produto.nome}</h1>
-              </div>
-            ))
-          : null}
-      </div>
-    </>
+  if (!produtos) return null;
+  return (
+    <div className="produtos">
+      {produtos.map((produto) => (
+        <Link to={produto.id}>
+          <img
+            src={produto.fotos[0].src}
+            className="fotoDeCapa"
+            alt="Foto do produto"
+          />
+        </Link>
+      ))}
+    </div>
   );
 };
 

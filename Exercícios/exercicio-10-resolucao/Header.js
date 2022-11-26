@@ -1,12 +1,17 @@
 import React from 'react';
-import styles from './App.module.css';
+import './styles.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header>
-      <button className={styles.button}>Produtos</button>
-      <button className={styles.button}>Contato</button>
-    </header>
+    <>
+      <Link to="/">
+        <button className="button">Produtos</button>
+      </Link>
+      <Link to="contato">
+        <button className="button">Contato</button>
+      </Link>
+    </>
   );
 };
 
