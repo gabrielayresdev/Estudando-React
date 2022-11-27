@@ -24,6 +24,10 @@
     min-width: 100px;
 }
 
+:global(.active), .button {
+    background-color: #eee;
+}
+
 .produtos {
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -37,3 +41,4 @@
     width: 100%;
     border-radius: 30px;
 }
+
